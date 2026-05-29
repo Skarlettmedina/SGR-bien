@@ -159,6 +159,7 @@ textarea {
     transform: translateY(0);
 }
 
+
 /* Responsivo para móviles */
 @media (max-width: 768px) {
     .form-container {

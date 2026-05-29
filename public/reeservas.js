@@ -8,6 +8,9 @@ let formulario = document.getElementById("formulario-reserva");
 let hora_inicio = document.getElementById("hora_inicio");
 let hora_fin = document.getElementById("hora_fin");
 let fecha = document.getElementById("fecha");
+let modal = document.getElementById("modal");
+let abrirModal = document.getElementById("reservar");
+let cerrarModal = document.getElementById("cerrarModal")
 let datos = [];
 let validar = false;
 
@@ -71,12 +74,30 @@ let validar = false;
         }
     }
     if(validar == true){
-            console.log("no esta disponible")
-            hora_fin.value = ""
-        }
+        console.log("no esta disponible")
+        hora_fin.value = ""
+        reservar.addEventListener("click", ()=>{
+            modal.showModal();
+            modal.innerHTML =
+            `
+            <div>
+                <h2>Horario no disponible</h2>
+                <h4>Estos son los rangos de horas reservados en ${espacio.value}; seleccionar un rango de fecha fuera de estos. </h1>
+                <label>hora inicio</label>
+                <p>${datos.inicio}</p>
+
+                <label>hora final</label>
+                <p>${datos.final}</p>
+            </div>
+             `
+    })
+
+        cerrarModal.addEventListener("click", ()=>{
+            modal.close();
+    })
+    }
  })
-    
- 
+
 
  formulario.addEventListener("submit", async(e) => {
     e.preventDefault();
