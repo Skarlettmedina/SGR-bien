@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #f8f9fa;
+}
+
+aside{
+    height: 100%;
+    width: 25%;
+    float: left;
+}
+
+aside #text{
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#encabezado {
+    background-color: #ffffff;
+    color: #2c3e50;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid #e1e8ed;
+    height: 25%;
+    width: 75%;
+    display: flex;
+    justify-self: end;
+    flex-direction: column;
+}
+
+#encabezado h1 {
+    font-size: 2em;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+#contenedor {
+   background: rgb(80, 35, 153);
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-self: end;
+    flex-wrap: wrap;
+}
+
+.reserva{
+    display: flex;
+    margin: 10px;;
+    width: 30%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    transition: all 0.3s ease;
+    height: 35%;
+}
+
+.reserva p, span, h2{
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+
+.reserva:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+#buscar{
+    border: 1.5px solid;
+    width: 80%;
+    border-radius: 5px;
+    height: 35px;
+    box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.5);
+}
