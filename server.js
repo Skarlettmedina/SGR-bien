@@ -14,7 +14,8 @@ const reserva = mongoose.model('Reserva', {
     descripcion: String,
     fecha: Date,
     hora_inicio: String,
-    hora_fin: String
+    hora_fin: String,
+    estado:String
 });
 
 app.use(express.json());
