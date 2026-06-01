@@ -33,12 +33,15 @@ function crear (reservas) {
             let p3 = document.createElement("p");
             p3.textContent = `Descripción: ${reservas[i].descripcion}`;
             reserva.appendChild(p3);
+            let footer = document.createElement("div");
+            footer.classList.add("footer");
+            reserva.appendChild(footer)
             let p4 = document.createElement("p");
             p4.textContent = `Fecha: ${new Date(reservas[i].fecha).toLocaleDateString()}`;
-            reserva.appendChild(p4);
+            footer.appendChild(p4);
             let span1 = document.createElement("span");
             span1.textContent = `Hora de inicio: ${reservas[i].hora_inicio}`;
-            reserva.appendChild(span1);
+            footer.appendChild(span1);
         }
     }
 }

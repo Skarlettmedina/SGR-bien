@@ -13,8 +13,13 @@ html, body {
 
 aside{
     height: 100%;
-    width: 25%;
+    width: 23%;
+    border-radius: 10px;
+    background-color:#ffffff;
+    padding: 5px;
     float: left;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
+    margin: 5px;
 }
 
 aside #text{
@@ -25,11 +30,9 @@ aside #text{
 }
 
 #encabezado {
-    background-color: #ffffff;
     color: #2c3e50;
     padding: 40px 20px;
     text-align: center;
-    border-bottom: 1px solid #e1e8ed;
     height: 25%;
     width: 75%;
     display: flex;
@@ -44,13 +47,16 @@ aside #text{
 }
 
 #contenedor {
-   background: rgb(80, 35, 153);
     width: 75%;
-    height: 100%;
     display: flex;
     flex-direction: row;
     justify-self: end;
     flex-wrap: wrap;
+}
+
+#contenedor h2{
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .reserva{
@@ -58,15 +64,18 @@ aside #text{
     margin: 10px;;
     width: 30%;
     background: white;
+    border: 1.5px solid #007faf;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     flex-direction: column;
     transition: all 0.3s ease;
     height: 35%;
+    
 }
 
 .reserva p, span, h2{
-    margin-left: 10px;
+    margin-left: 15px;
+    margin-bottom: 5px;
     margin-top: 5px;
 }
 
@@ -76,10 +85,19 @@ aside #text{
     transform: translateY(-2px);
 }
 
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+}
+
 #buscar{
     border: 1.5px solid;
     width: 80%;
-    border-radius: 5px;
+    border-radius: 20px;
     height: 35px;
     box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.5);
+    padding-left: 15px;
 }
