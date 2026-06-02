@@ -1,6 +1,10 @@
 let datos = [];
 let contenedor = document.getElementById("contenedor");
 let busqueda = document.getElementById("buscar");
+let estado1 = "🟢";
+let estado2 = "🔴";
+let estado3 = "🟡";
+let defEstado= ""
 
 window.addEventListener("load", async () => {
     const salida = await fetch("http://localhost:3000/api/reservas");
@@ -12,18 +16,30 @@ window.addEventListener("load", async () => {
 
 function crear (reservas) {
     contenedor.innerHTML = ""
-
     if(reservas.length == 0){
         console.log("No hay productos")
     }else{
         console.log(reservas)
         for(let i = 0; i < reservas.length; i++) {
+              if(reservas[i].estado == 1){
+                    defEstado = `${estado1} Revision`
+                }else if(reservas[i].estado == 2){
+                    defEstado = `${estado2} Cerrado`
+                }else if(reservas[i].estado == 2){
+                    defEstado = `${estado3} Abierto`
+                }
             let reserva = document.createElement("div");
             reserva.classList.add("reserva");
             contenedor.appendChild(reserva);
+            let divH2 = document.createElement("div");
+            divH2.classList.add("divH2")
+            reserva.appendChild(divH2);
             let h2 = document.createElement("h2");
             h2.textContent = reservas[i].espacio;
-            reserva.appendChild(h2);
+            divH2.appendChild(h2);
+            let estado = document.createElement("p")
+            estado.textContent = defEstado
+            divH2.appendChild(estado);
             let p1 = document.createElement("p");
             p1.textContent = `Actividad: ${reservas[i].actividad}`;
             reserva.appendChild(p1);
@@ -32,6 +48,7 @@ function crear (reservas) {
             reserva.appendChild(p2);
             let p3 = document.createElement("p");
             p3.textContent = `Descripción: ${reservas[i].descripcion}`;
+            p3.classList.add("descripcion")
             reserva.appendChild(p3);
             let footer = document.createElement("div");
             footer.classList.add("footer");
