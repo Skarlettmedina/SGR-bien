@@ -51,7 +51,7 @@ let validar = false;
     for(let i = 0; i < datos.inicio.length; i++){
         if(hora_inicio.value < datos.inicio[i]){
             hora_fin.style.display = "inline"
-        }else if(hora_inicio > datos.final[i]){
+        }else if(hora_inicio.value > datos.final[i]){
             hora_fin.style.display = "inline"
         }
     }
@@ -73,29 +73,46 @@ let validar = false;
             }
         }
     }
-    if(validar == true){
-        console.log("no esta disponible")
-        hora_fin.value = ""
-        reservar.addEventListener("click", ()=>{
-            modal.showModal();
-            modal.innerHTML =
-            `
-            <div>
-                <h2>Horario no disponible</h2>
-                <h4>Estos son los rangos de horas reservados en ${espacio.value}; seleccionar un rango de fecha fuera de estos. </h1>
-                <label>hora inicio</label>
-                <p>${datos.inicio}</p>
+    if (validar == true) {
+    console.log("no esta disponible");
+    hora_fin.value = "";
 
-                <label>hora final</label>
-                <p>${datos.final}</p>
+    reservar.addEventListener("click", () => {
+        modal.showModal();
+
+        let horaI= "";
+        let horaF = "";
+
+        if (datos.inicio && datos.final) {
+            horaI = datos.inicio.join('\n');
+             horaF = datos.final.join('\n');
+        } else {
+            horaI = "";
+            horaF = "";
+        }
+
+        modal.innerHTML = `
+        <div class="modal">
+            <h2>Horario no disponible</h2>
+            <h4>Estos son los rangos de horas reservados en ${seleccion.value}; seleccionar un rango de fecha fuera de estos. </h4>
+            <div class="rangoHoras">
+                <div>
+                    <label">Hora Inicio</label>
+                    <p>${horaI}</p>
+                </div>
+                <div>
+                    <label>Hora Final</label>
+                    <p>${horaF}</p>
+                </div>                      
             </div>
-             `
-    })
+        </div>
+        `;
+    });
 
-        cerrarModal.addEventListener("click", ()=>{
-            modal.close();
-    })
-    }
+    cerrarModal.addEventListener("click", () => {
+        modal.close();
+    });
+}
  })
 
 
