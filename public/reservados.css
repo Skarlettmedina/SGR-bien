@@ -11,13 +11,33 @@ html, body {
     background-color: #f8f9fa;
 }
 
+aside{
+    height: 100%;
+    width: 23%;
+    border-radius: 10px;
+    background-color:#ffffff;
+    padding: 5px;
+    float: left;
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
+    margin: 5px;
+}
+
+aside #text{
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #encabezado {
-    background-color: #ffffff;
     color: #2c3e50;
     padding: 40px 20px;
     text-align: center;
-    border-bottom: 1px solid #e1e8ed;
-    height: 20%;
+    height: 25%;
+    width: 75%;
+    display: flex;
+    justify-self: end;
+    flex-direction: column;
 }
 
 #encabezado h1 {
@@ -27,61 +47,72 @@ html, body {
 }
 
 #contenedor {
-   background: rgb(80, 35, 153);
-    margin: auto;
-    width: 100%;
-    height: 80%;
+    width: 75%;
+    height: 75%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-self: end;
+    flex-wrap: wrap;
+}
+
+#contenedor h2{
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .reserva{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 50px;;
-    width: 90%;
+    margin: 10px;;
+    width: 30%;
     background: white;
+    border: 1.5px solid #007faf;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    padding: 5%;
     flex-direction: column;
     transition: all 0.3s ease;
-    height: auto;
+    height: 47%;
 }
 
-.reserva p {
-    width: 100%;
-    margin-bottom: 0.85rem;
-    color: #495057;
-    line-height: 1.6;
+.reserva p, span, h2{
+    margin-left: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
-.reserva p strong {
-    color: #2c3e50;
-}
-
-.reserva-footer {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-    width: 100%;
-    padding-top: 0.75rem;
-    border-top: 1px solid #e9ecef;
-    margin-top: 0.75rem;
-}
-
-.reserva-footer span {
-    color: #495057;
-    font-size: 0.95rem;
-}
-
-.reserva-footer strong {
-    color: #2c3e50;
-}
 
 .reserva:hover {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px);
+}
+
+.reserva .descripcion{
+    height: 60px;
+    max-height: 60px;
+    overflow: hidden;
+}
+
+.divH2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.divH2 p{
+    margin-right: 5px;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+}
+
+#buscar{
+    border: 1.5px solid;
+    width: 80%;
+    border-radius: 20px;
+    height: 35px;
+    box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.5);
+    padding-left: 15px;
 }

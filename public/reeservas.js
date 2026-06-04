@@ -2,6 +2,7 @@ let sala1 = "Sala 1";
 let sala2 = "Sala 2";
 let sala3 = "Sala 3";
 
+
 let seleccion = document.getElementById("espacio");
 let descripcion = document.getElementById("contenedor_text");
 let formulario = document.getElementById("formulario-reserva");
@@ -125,6 +126,7 @@ let validar = false;
     let fecha = document.getElementById("fecha").value;
     let hora_inicio= document.getElementById("hora_inicio").value;
     let hora_fin = document.getElementById("hora_fin").value;
+    let estado = 1
 
     const respuesta = await fetch("http://localhost:3000/api/reservas", {
         method: "POST",
@@ -138,7 +140,8 @@ let validar = false;
             descripcion,
             fecha,
             hora_inicio,
-            hora_fin
+            hora_fin,
+            estado
         })
     })
     const resultado = await respuesta.json();
