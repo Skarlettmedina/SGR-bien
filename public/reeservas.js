@@ -94,18 +94,25 @@ let validar = false;
 
         modal.innerHTML = `
         <div class="modal">
-            <h2>Horario no disponible</h2>
-            <h4>Estos son los rangos de horas reservados en ${seleccion.value}; seleccionar un rango de fecha fuera de estos. </h4>
+            <header>
+                <img src="./img/logoUCC.png">
+            </header>
+            <div class="content">
+                <h2>Horario no disponible</h2>
+                <h4>${seleccion.value} está reservada para los siguientes rangos de hora.
+                Por favor, seleccione un horario alternativo </h4>
             <div class="rangoHoras">
-                <div>
-                    <label">Hora Inicio</label>
+                <div class="hora1">
+                    <label>Hora Inicio</label>
                     <p>${horaI}</p>
                 </div>
-                <div>
+                <div class="hora2">
                     <label>Hora Final</label>
                     <p>${horaF}</p>
                 </div>                      
             </div>
+            </div>
+            
         </div>
         `;
     });
