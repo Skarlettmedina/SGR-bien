@@ -7,11 +7,44 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="encabezado">
+    <div id="slider-container">
+        <div class="slider-track">
+            <div class="slide">
+                <img src="./assets/imagenes/1.jpeg" alt="Sala de Cómputo">
+
+            </div>
+            <div class="slide">
+                <img src="./assets/imagenes/2.jpeg" alt="Auditorio">
+
+            </div>
+            <div class="slide">
+                <img src="./assets/imagenes/3.jpg" alt="Biblioteca">
+
+            </div>
+             <div class="slide">
+                <img src="./assets/imagenes/4.png" alt="Biblioteca">
+
+            </div>
+        </div>
     </div>
     <div id="cuerpo"> 
-        <button id="btn1"><a href="reservas.html">Reservar Espacio</a></button>
-        <button id="btn1"><a href="reservados.html">Solicitudes</a></button>
+        <div id="text">
+            <img src="./assets/icon/calendario.png" alt="" style="height: 50px; width: 50px; margin-top: 20px;">
+            <h3>Bienvenido a tu espacio para reservas</h3><br>
+            <p>Puedes solicitar la reserva de un espacio extracurricular y revisar tus solitudes ya creadas.</p>
+            <p>¿Que deseas hacer hoy?</p>
+        </div>
+        <div id="botones">
+            <button id="btn1">
+                <img src="./assets/icon/reserva.png" alt="" style="height: 40px; width: 40px; "><br>
+                <a href="">Reservar Espacio</a>
+            </button>
+            <button id="btn2">
+                <img src="./assets/icon/perfil.png" alt="" style="height: 40px; width: 40px; "><br>
+                <a href="">Mis Solicitudes</a>
+            </button>
+        </div>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>

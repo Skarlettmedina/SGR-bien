@@ -47,39 +47,8 @@ let validar = false;
     datos = horarios
  })
 
- hora_inicio.addEventListener("change", async ()=>{
-    console.log(datos.inicio.length)
-    for(let i = 0; i < datos.inicio.length; i++){
-        if(hora_inicio.value < datos.inicio[i]){
-            hora_fin.style.display = "inline"
-        }else if(hora_inicio.value > datos.final[i]){
-            hora_fin.style.display = "inline"
-        }
-    }
-    if(datos.inicio.length < 1){
-            hora_fin.style.display = "inline"
-        }
- })
-
- hora_fin.addEventListener("change", ()=>{
-      for(let i = 0; i < datos.inicio.length; i++){
-        if(hora_inicio.value <= datos.inicio[i]){
-            if(hora_fin.value > datos.inicio[i]){
-                validar = true
-                
-            }
-        }else if(hora_inicio.value > datos.inicio[i]){
-            if(hora_inicio.value < datos.final[i]){
-                validar = true
-            }
-        }
-    }
-    if (validar == true) {
-    console.log("no esta disponible");
-    hora_fin.value = "";
-
-    reservar.addEventListener("click", () => {
-        modal.showModal();
+     const revisar = (() => {
+               modal.showModal();
 
         let horaI= "";
         let horaF = "";
@@ -108,7 +77,43 @@ let validar = false;
             </div>
         </div>
         `;
-    });
+    })
+
+ hora_inicio.addEventListener("change", async ()=>{
+    console.log(datos.inicio.length)
+    for(let i = 0; i < datos.inicio.length; i++){
+        if(hora_inicio.value < datos.inicio[i]){
+            hora_fin.style.display = "inline"
+        }else if(hora_inicio.value > datos.final[i]){
+            hora_fin.style.display = "inline"
+        }else{
+           revisar()
+        }
+    }
+    if(datos.inicio.length < 1){
+            hora_fin.style.display = "inline"
+        }
+ })
+
+ hora_fin.addEventListener("change", ()=>{
+      for(let i = 0; i < datos.inicio.length; i++){
+        if(hora_inicio.value <= datos.inicio[i]){
+            if(hora_fin.value > datos.inicio[i]){
+                validar = true
+                
+            }
+        }else if(hora_inicio.value > datos.inicio[i]){
+            if(hora_inicio.value < datos.final[i]){
+                validar = true
+            }
+        }
+    }
+    if (validar == true) {
+    console.log("no esta disponible");
+    hora_fin.value = "";
+
+
+    reservar.addEventListener("click", revisar)
 
     cerrarModal.addEventListener("click", () => {
         modal.close();
